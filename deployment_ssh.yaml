@@ -1,0 +1,7 @@
+---
+- name: Interface Operation
+  hosts: all
+  connection: local
+  gather_facts: false
+  roles:
+    - add_loopback_interface

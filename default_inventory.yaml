@@ -1,0 +1,38 @@
+all:
+    children:
+        vIOS:
+            hosts:
+
+                RTR1:
+                    ansible_host: 172.16.1.237
+                    ansible_network_os: ios
+                    ansible_user: cisco
+                    ansible_pass: cisco
+                    ansible_become: yes
+                    ansible_become_method: enable
+
+        CSR1000v:
+            hosts:
+
+                csr1000v1:
+                    ansible_host: 172.16.1.236
+                    ansible_network_os: ios
+                    ansible_user: netadmin
+                    ansible_pass: Cisco123
+                    ansible_become: yes
+                    ansible_become_method: enable
+                    provider:
+                      host: 172.16.1.236
+                      username: netadmin
+                      password: Cisco123
+                      authorize: yes
+                      port: 22
+                      timeout: 20
+
+                csr1000v2:
+                    ansible_host: 172.16.1.232
+                    ansible_network_os: ios
+                    ansible_user: netadmin
+                    ansible_pass: Cisco123
+                    ansible_become: yes
+                    ansible_become_method: enable

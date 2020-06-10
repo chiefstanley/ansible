@@ -1,0 +1,12 @@
+---
+- name: Enable Interface G4
+  ios_interface:
+    name: GigabitEthernet4
+    enabled: True
+    timeout: 30
+
+- name: Enable Interface G4
+  ios_config:
+    lines:
+      - interface GigabitEthernet4
+      - no shutdown
