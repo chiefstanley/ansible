@@ -1,0 +1,9 @@
+---
+- name: Configure_Interfaces
+  with_items: "{{ interfaces }}"
+  ios_config:
+    provider: "{{ provider }}"
+    lines:
+      - ip address {{ item.ip_address }} {{ item.subnet_mask }}
+      - no shutdown
+    parents: interface {{ item.interface_type }}

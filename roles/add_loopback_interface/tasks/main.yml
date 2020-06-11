@@ -1,9 +1,0 @@
----
-- name: Enable Interface G4
-  ios_config:
-    lines:
-      - no shutdown
-    timeout: 30
-    parents: "{{ item }}"
-  with_items:
-    - interface GigabitEthernet4

@@ -1,17 +1,8 @@
-provider:
-  host: "{{ ansible_host }}"
-  username: cisco
-  password: cisco
-  auth_pass: cisco
-  authorize: no
-  port: 22
-  timeout: 15
-loopback_interfaces:
-  - interface_type: Loopback
-    interface_id: 10
+---
+interfaces:
+  - interface_type: GigabitEthernet4
     ip_address: 10.2.10.1
-    subnet_mask: 255.255.255.255
-  - interface_type: Loopback
-    interface_id: 20
-    ip_address: 10.2.20.1
     subnet_mask: 255.255.255.252
+  - interface_type: Loopback20
+    ip_address: 10.2.20.1
+    subnet_mask: 255.255.255.255
