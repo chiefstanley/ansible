@@ -1,34 +1,33 @@
 all:
-    children:
-        CSR1000v:
-            hosts:
+  children:
+    CSR1000v:
+      hosts:
+        csr1000v1:
+          ansible_host: 172.16.1.236
+          ansible_network_os: ios
+          ansible_user: netadmin # not used with "connection-provider" combination
+          ansible_pass: Cisco123 # not used with "connection-provider" combination
+          ansible_become: yes
+          ansible_become_method: enable
+          provider:
+            host: "{{ ansible_host }}"
+            username: netadmin
+            password: Cisco123
+            authorize: yes
+            port: 22
+            timeout: 15
 
-                csr1000v1:
-                    ansible_host: 172.16.1.236
-                    ansible_network_os: ios
-                    ansible_user: netadmin # not used with "connection-provider" combination
-                    ansible_pass: Cisco123 # not used with "connection-provider" combination
-                    ansible_become: yes
-                    ansible_become_method: enable
-                    provider:
-                        host: "{{ ansible_host }}"
-                        username: netadmin
-                        password: Cisco123
-                        authorize: yes
-                        port: 22
-                        timeout: 15
-
-                csr1000v2:
-                    ansible_host: 172.16.1.232
-                    ansible_network_os: ios
-                    ansible_user: netadmin # not used with "connection-provider" combination
-                    ansible_pass: Cisco123 # not used with "connection-provider" combination
-                    ansible_become: yes
-                    ansible_become_method: enable
-                    provider:
-                        host: "{{ ansible_host }}"
-                        username: netadmin
-                        password: Cisco123
-                        authorize: yes
-                        port: 22
-                        timeout: 15
+        csr1000v2:
+          ansible_host: 172.16.1.232
+          ansible_network_os: ios
+          ansible_user: netadmin # not used with "connection-provider" combination
+          ansible_pass: Cisco123 # not used with "connection-provider" combination
+          ansible_become: yes
+          ansible_become_method: enable
+          provider:
+            host: "{{ ansible_host }}"
+            username: netadmin
+            password: Cisco123
+            authorize: yes
+            port: 22
+            timeout: 15
